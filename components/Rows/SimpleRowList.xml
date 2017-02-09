@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<!--********** Copyright 2016 Roku Corp.  All Rights Reserved. **********-->
+
+
+<component name="SimpleRowList" extends="RowList" >
+
+<script type="text/brightscript" >
+<![CDATA[
+
+    function init()
+        print "in SimpleRowListPanel init()"
+	    m.top.itemComponentName = "MoreInfoOnFocusGridItem"
+	    m.top.numRows = 2
+	    m.top.itemSize = [360, 540]
+	    m.top.rowHeights = [540]
+	    m.top.rowItemSize = [ [360, 540], [360, 540], [360, 540] ]
+	    m.top.itemSpacing = [ 0, 80 ]
+	    m.top.rowItemSpacing = [ [20, 0] ]
+	    m.top.focusXOffset = 0
+		m.top.rowLabelOffset = [ [0, 30] ]
+	    m.top.rowFocusAnimationStyle = "floatingFocus"
+		m.top.showRowLabel = true
+		m.top.showRowCounter = true
+		
+		m.top.rowLabelOffset = [ [0, 10] ]
+		m.top.animateToItem = 10
+		m.top.rowLabelColor="0xa0b033ff"
+        
+	    m.top.visible = true
+	    'm.top.SetFocus(true)
+	    m.top.ObserveField("rowItemFocused", "onRowItemFocused")
+    end function
+
+	
+
+    function onRowItemFocused() as void
+        row = m.top.rowItemFocused[0]
+        col = m.top.rowItemFocused[1]
+        print "Row Focused: " + stri(row)
+        print "Col Focused: " + stri(col)
+    end function
+]]>
+</script>
+</component>

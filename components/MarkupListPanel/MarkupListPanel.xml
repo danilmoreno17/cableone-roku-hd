@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+
+<!--********** Copyright 2016 Roku Corp.  All Rights Reserved. **********-->
+<!-- This is a panel that has a list inside of it and handles proper focusing of it.
+	List is accessible via interface field "list" so you can customize it easily. -->
+<component name="MarkupListPanel" extends="Panel" xsi:noNamespaceSchemaLocation="https://devtools.web.roku.com/schema/RokuSceneGraph.xsd">
+
+	<interface>
+		<!-- provides acess to items list -->
+		<field id="list" type="node"/>
+	</interface> 
+	
+	<script type="text/brightscript" uri="pkg:/components/MarkupListPanel/MarkupListPanel.brs"/>
+	
+	<children>
+	
+		<SimpleRowList id="List" translation="[50,50]" />
+	</children>
+</component>
